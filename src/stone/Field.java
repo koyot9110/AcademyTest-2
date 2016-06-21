@@ -62,7 +62,7 @@ public class Field {
 			printBoard();
 			System.out.println("Enter: 'new' for new game");
 			System.out.println("Enter: 'exit' for exit game");
-			System.out.println("Enter: 'w, a, s, d' for move");
+			System.out.println("Enter: 'w/up, a/left, s/down, d/right' for move");
 			System.out.println("Time is: " + getTime(time) + " second");
 			processInput();
 		} while (true);
