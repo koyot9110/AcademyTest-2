@@ -140,40 +140,56 @@ public class Field {
 					switch (matcher.group(3)) {
 					case "w":
 					case "up":
-						if (i < getRowCount() - 1) {
-							array[i][j] = getArray(i + 1, j);
-							array[i + 1][j] = 0;
-							System.out.println("Move up");
-						}
+						moveUp(i, j);
 						break;
 					case "a":
 					case "left":
-						if (j < getColumnCount() - 1) {
-							array[i][j] = getArray(i, j + 1);
-							array[i][j + 1] = 0;
-							System.out.println("Move left");
-						}
+						moveLeft(i, j);
 						break;
 					case "s":
 					case "down":
-						if (i > 0) {
-							array[i][j] = getArray(i - 1, j);
-							array[i - 1][j] = 0;
-							System.out.println("Move down");
-						}
+						moveDown(i, j);
 						break;
 					case "d":
 					case "right":
-						if (j > 0) {
-							array[i][j] = getArray(i, j - 1);
-							array[i][j - 1] = 0;
-							System.out.println("Move right");
-						}
+						moveRight(i, j);
 						break;
 					}
 					return;
 				}
 			}
+		}
+	}
+
+	public void moveRight(int i, int j) {
+		if (j > 0) {
+			array[i][j] = getArray(i, j - 1);
+			array[i][j - 1] = 0;
+			System.out.println("Move right");
+		}
+	}
+
+	public void moveDown(int i, int j) {
+		if (i > 0) {
+			array[i][j] = getArray(i - 1, j);
+			array[i - 1][j] = 0;
+			System.out.println("Move down");
+		}
+	}
+
+	public void moveLeft(int i, int j) {
+		if (j < getColumnCount() - 1) {
+			array[i][j] = getArray(i, j + 1);
+			array[i][j + 1] = 0;
+			System.out.println("Move left");
+		}
+	}
+
+	public void moveUp(int i, int j) {
+		if (i < getRowCount() - 1) {
+			array[i][j] = getArray(i + 1, j);
+			array[i + 1][j] = 0;
+			System.out.println("Move up");
 		}
 	}
 
