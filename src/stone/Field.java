@@ -14,20 +14,18 @@ public class Field {
 	private final int[][] array;
 	private final int rowCount;
 	private final int columnCount;
-	private final int stoneCount;
 	private long startTime = System.currentTimeMillis();
 	private long time = 0;
 	Random rnd = new Random();
 
-	public Field(int rowCount, int columnCount, int stoneCount) {
+	public Field(int rowCount, int columnCount) {
 		this.rowCount = rowCount;
 		this.columnCount = columnCount;
-		this.stoneCount = stoneCount;
 		array = new int[rowCount][columnCount];
 	}
 
 	public Field() {
-		this(4, 4, 15);
+		this(4, 4);
 	}
 
 	public int getRowCount() {
@@ -36,10 +34,6 @@ public class Field {
 
 	public int getColumnCount() {
 		return columnCount;
-	}
-
-	public int getStoneCount() {
-		return stoneCount;
 	}
 
 	public int getArray(int row, int column) {
@@ -62,7 +56,8 @@ public class Field {
 			printBoard();
 			System.out.println("Enter: 'new' for new game");
 			System.out.println("Enter: 'exit' for exit game");
-			System.out.println("Enter: 'w/up, a/left, s/down, d/right' for move");
+			System.out
+					.println("Enter: 'w/up, a/left, s/down, d/right' for move");
 			System.out.println("Time is: " + getTime(time) + " second");
 			processInput();
 		} while (true);
